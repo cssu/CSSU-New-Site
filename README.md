@@ -1,6 +1,6 @@
 # CSSU — Computer Science Student Union
 
-A modern, production-quality rebuild of the [Computer Science Student Union](https://cssu.ca) website for the University of Toronto. Premium dark UI, fully responsive, accessible, and ready to deploy to Vercel.
+A modern, production-quality rebuild of the [Computer Science Student Union](https://cssu.ca) website for the University of Toronto. Premium dark UI, fully responsive, accessible, and ready to deploy to Vercel
 
 ---
 
