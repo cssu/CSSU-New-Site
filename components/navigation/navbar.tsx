@@ -56,13 +56,6 @@ export function Navbar() {
                     : "text-muted-foreground hover:text-foreground",
                 )}
               >
-                {active ? (
-                  <motion.span
-                    layoutId="nav-active"
-                    className="absolute inset-0 -z-10 rounded-full bg-tint/[0.06]"
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                ) : null}
                 {link.label}
               </Link>
             );

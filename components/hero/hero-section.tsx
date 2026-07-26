@@ -51,7 +51,7 @@ export function HeroSection() {
         </Reveal>
       </div>
 
-      <Stagger className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4">
+      {/* <Stagger className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4">
         {stats.map((stat) => (
           <StaggerItem
             key={stat.label}
@@ -65,7 +65,7 @@ export function HeroSection() {
             </span>
           </StaggerItem>
         ))}
-      </Stagger>
+      </Stagger> */}
     </section>
   );
 }

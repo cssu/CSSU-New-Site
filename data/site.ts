@@ -26,7 +26,7 @@ export const siteConfig = {
 } as const;
 
 export const mainNav: NavLink[] = [
-  { label: "About", href: "/about" },
+  { label: "About", href: "/" },
   { label: "Student Guides", href: "/guides" },
   { label: "Resources", href: "/resources" },
   { label: "Sponsorship", href: "/sponsorship" },
@@ -34,7 +34,7 @@ export const mainNav: NavLink[] = [
 ];
 
 export const mobileNav: NavLink[] = [
-  { label: "About", href: "/about", description: "Our mission & council" },
+  { label: "About", href: "/", description: "Our mission & council" },
   { label: "Team", href: "/team", description: "Meet the executives" },
   { label: "Events", href: "/events", description: "Socials, seminars & more" },
   {
@@ -70,7 +70,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
   {
     title: "Explore",
     links: [
-      { label: "About", href: "/about" },
+      { label: "About", href: "/" },
       { label: "Team", href: "/team" },
       { label: "Events", href: "/events" },
       { label: "Student Guides", href: "/guides" },

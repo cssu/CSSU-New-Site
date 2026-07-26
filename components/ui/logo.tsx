@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { DivideCircle } from "lucide-react";
 
 interface LogoProps {
   className?: string;
@@ -11,11 +12,9 @@ interface LogoProps {
 export function Logo({
   className,
   showWordmark = true,
-  href = "/",
 }: LogoProps) {
   return (
-    <Link
-      href={href}
+    <div
       aria-label="CSSU — Computer Science Student Union, home"
       className={cn("group flex items-center gap-2.5", className)}
     >
@@ -50,6 +49,6 @@ export function Logo({
           </span>
         </span>
       ) : null}
-    </Link>
+    </div>
   );
 }

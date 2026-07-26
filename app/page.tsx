@@ -63,24 +63,6 @@ export default function HomePage() {
 
       <HeroSection />
 
-      {/* About */}
-      <SectionContainer id="about" spacing="lg" width="wide">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
-          <SectionHeader
-            label="Who we are"
-            title="A student-governed home for computer science at UofT"
-            description={missionStatement}
-          />
-          <Stagger className="grid gap-5 sm:grid-cols-2">
-            {objectives.map((item, i) => (
-              <StaggerItem key={item.title} className="h-full">
-                <FeatureCard item={item} accent={objectiveAccents[i]} />
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </SectionContainer>
-
       {/* Student resources & guides */}
       <SectionContainer spacing="md" width="wide">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -102,6 +84,24 @@ export default function HomePage() {
             </StaggerItem>
           ))}
         </Stagger>
+      </SectionContainer>
+
+      {/* About */}
+      <SectionContainer id="about" spacing="lg" width="wide">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+          <SectionHeader
+            label="Who we are"
+            title="A student-governed home for computer science at UofT"
+            description={missionStatement}
+          />
+          <Stagger className="grid gap-5 sm:grid-cols-2">
+            {objectives.map((item, i) => (
+              <StaggerItem key={item.title} className="h-full">
+                <FeatureCard item={item} accent={objectiveAccents[i]} />
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
       </SectionContainer>
 
       {/* Events */}
