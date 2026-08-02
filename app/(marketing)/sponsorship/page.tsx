@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PageHeader } from "@/components/layout/page-header";
 import { SectionContainer } from "@/components/sections/section-container";
 import { SectionHeader } from "@/components/sections/section-header";
@@ -46,7 +47,7 @@ export default function SponsorshipPage() {
       </PageHeader>
 
       {/* Supporters */}
-      <SectionContainer spacing="sm" width="wide">
+      {/* <SectionContainer spacing="sm" width="wide">
         <p className="text-center text-xs font-medium uppercase tracking-[0.18em] text-subtle-foreground">
           Proudly supported by
         </p>
@@ -54,20 +55,25 @@ export default function SponsorshipPage() {
           <Marquee>
             {sponsorSupporters.map((supporter) => (
               <div
-                key={supporter.initials}
-                className="flex min-w-[230px] items-center gap-3 rounded-2xl border border-border bg-tint/[0.02] px-6 py-5"
+                key={supporter.name}
+                className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
               >
-                <span className="grid size-10 place-items-center rounded-xl border border-border bg-surface-elevated text-xs font-semibold text-foreground">
-                  {supporter.initials}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  {supporter.name}
-                </span>
+                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
               </div>
             ))}
           </Marquee>
         </Reveal>
-      </SectionContainer>
+      </SectionContainer> */}
+      <Marquee>
+            {sponsorSupporters.map((supporter) => (
+              <div
+                key={supporter.name}
+                className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
+              >
+                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
+              </div>
+            ))}
+          </Marquee>
 
       {/* Previously sponsored events */}
       <SectionContainer spacing="md" width="wide">

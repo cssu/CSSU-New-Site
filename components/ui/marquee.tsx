@@ -14,7 +14,7 @@ export function Marquee({ children, className, pauseOnHover = true }: MarqueePro
       <div
         className={cn(
           "flex w-max animate-marquee items-center gap-4",
-          pauseOnHover && "group-hover/marquee:[animation-play-state:paused]",
+          // pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         <div className="flex shrink-0 items-center gap-4">{children}</div>

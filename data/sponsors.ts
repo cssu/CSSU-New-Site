@@ -5,9 +5,18 @@ export const sponsorIntro =
   "Partnering with the CSSU connects your organization with one of the largest, most engaged computer science communities in Canada — over 5,000 students at the University of Toronto's St. George campus, consistently ranked the top university in Canada.";
 
 export const sponsorSupporters: Partner[] = [
-  { name: "Arts & Science Students' Union", initials: "ASSU" },
-  { name: "Department of Computer Science", initials: "DCS" },
-  { name: "The Office Store", initials: "BA2250" },
+  { name: "ADP", src: "/assets/affiliates/adp.png" },
+  { name: "AMD", src: "/assets/affiliates/amd.png" },
+  { name: "Dayforce", src: "/assets/affiliates/dayforce.png" },
+  { name: "Definity", src: "/assets/affiliates/definity.png" },
+  { name: "Deloitte", src: "/assets/affiliates/deloitte.png" },
+  { name: "Google", src: "/assets/affiliates/google.png" },
+  { name: "Huawei", src: "/assets/affiliates/huawei.png" },
+  { name: "Intel", src: "/assets/affiliates/intel.png" },
+  { name: "Manulife", src: "/assets/affiliates/manulife.png" },
+  { name: "Qualcomm", src: "/assets/affiliates/qualcomm.png" },
+  { name: "SOTI", src: "/assets/affiliates/soti.png" },
+  { name: "Vector Institute", src: "/assets/affiliates/vector_institute.png" },
 ];
 
 export interface SponsoredEvent {

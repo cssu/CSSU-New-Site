@@ -105,7 +105,7 @@ export interface SponsorBenefit {
 
 export interface Partner {
   name: string;
-  initials: string;
+  src: string;
 }
 
 export interface OpenPosition {

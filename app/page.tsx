@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/hero/hero-section";
 import { SectionContainer } from "@/components/sections/section-container";
@@ -17,7 +18,7 @@ import { objectives, missionStatement } from "@/data/about";
 import { guides, newsItems } from "@/data/guides";
 import { events } from "@/data/events";
 import { executives } from "@/data/team";
-import { sponsorSupporters, sponsorTiers } from "@/data/sponsors";
+import { sponsorTiers, sponsorSupporters } from "@/data/sponsors";
 import { siteConfig } from "@/data/site";
 import type { AccentColor } from "@/types";
 
@@ -63,11 +64,29 @@ export default function HomePage() {
 
       <HeroSection />
 
+      <SectionContainer spacing="md" width="wide" className="-my-30"> 
+        <div className="flex flex-row justify-center gap-5">
+          <Reveal className="rotate-355">
+            <Image src="/assets/photo.png" alt="photo" width={200} height={200} />
+          </Reveal>
+          <Reveal className="mt-18 rotate-6">
+            <Image src="/assets/pancakes.png" alt="photo" width={192} height={192} />
+          </Reveal>
+          <Reveal className="mt-1 rotate-3">
+            <Image src="/assets/speaker.png" alt="photo" width={200} height={200} />
+          </Reveal>
+          <Reveal className="-mt-30">
+            <Image src="/assets/pizzas.png" alt="photo" width={210} height={210} />
+          </Reveal>
+        </div>
+        
+      </SectionContainer>
+
       {/* Student resources & guides */}
       <SectionContainer spacing="md" width="wide">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeader
-            label="Student resources"
+            label="Quick Start"
             title="Everything you need to thrive"
             description="Curated guides and resources to help you navigate your degree, your career, and your wellbeing."
           />
@@ -139,15 +158,10 @@ export default function HomePage() {
           <Marquee>
             {sponsorSupporters.map((supporter) => (
               <div
-                key={supporter.initials}
-                className="flex min-w-[220px] items-center gap-3 rounded-2xl border border-border bg-tint/[0.02] px-6 py-5"
+                key={supporter.name}
+                className="flex min-w-[160px] items-center justify-center rounded-2xl border border-border bg-tint/[0.02] px-6 py-5"
               >
-                <span className="grid size-10 place-items-center rounded-xl border border-border bg-surface-elevated text-xs font-semibold text-foreground">
-                  {supporter.initials}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  {supporter.name}
-                </span>
+                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
               </div>
             ))}
           </Marquee>
