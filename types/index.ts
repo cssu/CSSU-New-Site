@@ -83,6 +83,7 @@ export interface CssuEvent {
   status: EventStatus;
   registrationUrl?: string;
   accent: AccentColor;
+  image?: string;
 }
 
 export type SponsorTier = "bronze" | "silver" | "gold" | "platinum";

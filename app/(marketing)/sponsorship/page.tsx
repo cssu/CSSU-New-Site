@@ -6,6 +6,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Marquee } from "@/components/ui/marquee";
 import { GlassCard } from "@/components/cards/glass-card";
+import { PhotoCard } from "@/components/cards/photo-card";
 import { FeatureCard } from "@/components/cards/feature-card";
 import { SponsorCard } from "@/components/cards/sponsor-card";
 import { SponsorInquiryForm } from "@/components/sponsorship/sponsor-inquiry-form";
@@ -45,55 +46,54 @@ export default function SponsorshipPage() {
           View tiers
         </CTAButton>
       </PageHeader>
+      
 
       {/* Supporters */}
-      {/* <SectionContainer spacing="sm" width="wide">
+      <SectionContainer spacing="sm" width="wide">
         <p className="text-center text-xs font-medium uppercase tracking-[0.18em] text-subtle-foreground">
           Proudly supported by
         </p>
-        <Reveal className="mt-8">
-          <Marquee>
-            {sponsorSupporters.map((supporter) => (
-              <div
-                key={supporter.name}
-                className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
-              >
-                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
-              </div>
-            ))}
-          </Marquee>
-        </Reveal>
-      </SectionContainer> */}
-      <Marquee>
-            {sponsorSupporters.map((supporter) => (
-              <div
-                key={supporter.name}
-                className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
-              >
-                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
-              </div>
-            ))}
-          </Marquee>
+        <Marquee>
+          {sponsorSupporters.map((supporter) => (
+            <div
+              key={supporter.name}
+              className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
+            >
+              <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
+            </div>
+          ))}
+        </Marquee>
+      </SectionContainer>
 
       {/* Previously sponsored events */}
       <SectionContainer spacing="md" width="wide">
         <SectionHeader
           align="center"
-          label="Past partnerships"
           title="Previously sponsored events"
           description="A snapshot of the recruiting and career programming our partners have powered."
         />
-        <Stagger className="mt-12 grid gap-5 sm:grid-cols-3">
+        <Stagger className="mt-12 grid gap-5 sm:grid-cols-3 h-80">
           {sponsoredEvents.map((event) => (
             <StaggerItem key={event.title} className="h-full">
-              <GlassCard interactive className="flex h-full flex-col gap-3 p-7">
-                <span className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
-                  with {event.partner}
-                </span>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {event.title}
-                </h3>
-              </GlassCard>
+              {event.image ? (
+                <PhotoCard src={event.image} alt={event.title} className="flex h-full flex-col gap-3 p-7">
+                  <span className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
+                    with {event.partner}
+                  </span>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {event.title}
+                  </h3>
+                </PhotoCard>
+              ) : (
+                <GlassCard interactive className="flex h-full flex-col gap-3 p-7">
+                  <span className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
+                    with {event.partner}
+                  </span>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {event.title}
+                  </h3>
+                </GlassCard>
+              )}
             </StaggerItem>
           ))}
         </Stagger>

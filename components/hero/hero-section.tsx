@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-40 sm:pt-48 lg:px-8">
+    <section className="relative overflow-hidden px-6 pb-20 pt-32 sm:pt-48 lg:px-8">
       {/* Backdrop */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-[600px] w-[1100px] -translate-x-1/2 glow-accent opacity-80" />

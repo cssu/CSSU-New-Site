@@ -20,7 +20,7 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-xl",
+        "relative overflow-hidden rounded-lg",
         glass ? "glass" : "card-surface",
         interactive && "card-surface-hover",
         className,

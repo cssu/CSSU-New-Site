@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Calendar, MapPin, ArrowUpRight } from "lucide-react";
 import { GlassCard } from "@/components/cards/glass-card";
 import { Badge } from "@/components/ui/badge";
@@ -11,13 +12,26 @@ export function EventCard({ event }: { event: CssuEvent }) {
 
   return (
     <GlassCard interactive className="group flex h-full flex-col">
-      <div className="relative h-36 overflow-hidden border-b border-border">
-        <div
-          className={cn(
-            "absolute inset-0 bg-gradient-to-br to-transparent",
-            accent.gradientFrom,
-          )}
-        />
+      <div className="relative h-48 overflow-hidden border-b border-border">
+        {event.image ? (
+          <>
+          <Image
+            src={event.image}
+            alt=""
+            fill
+            className="object-cover"
+          />
+          <div className={`absolute inset-0 bg-linear-to-t from-black/90 to-transparent`}>
+          </div>
+          </>
+        ) : (
+          <div
+            className={cn(
+              "absolute inset-0 bg-gradient-to-br to-transparent",
+              accent.gradientFrom,
+            )}
+          />
+        )}
         <div className="absolute inset-0 bg-dot opacity-50" />
         <div className="relative flex h-full items-end justify-between p-5">
           <span

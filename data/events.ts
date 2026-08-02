@@ -16,6 +16,7 @@ export const events: CssuEvent[] = [
     status: "upcoming",
     registrationUrl: "/contact",
     accent: "accent",
+    image: "/assets/frosh.png",
   },
   {
     slug: "resume-internship-night",
@@ -29,6 +30,7 @@ export const events: CssuEvent[] = [
     status: "upcoming",
     registrationUrl: "/contact",
     accent: "blue",
+    image: "/assets/event_dayforce.png",
   },
   {
     slug: "research-in-cs-seminar",
@@ -42,6 +44,7 @@ export const events: CssuEvent[] = [
     status: "upcoming",
     registrationUrl: "/contact",
     accent: "gold",
+    image: "/assets/panel.png",
   },
   {
     slug: "game-night",

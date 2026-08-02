@@ -21,8 +21,8 @@ const widths: Record<NonNullable<SectionContainerProps["width"]>, string> = {
 const spacings: Record<NonNullable<SectionContainerProps["spacing"]>, string> = {
   none: "",
   sm: "py-16 sm:py-20",
-  md: "py-20 sm:py-28",
-  lg: "py-28 sm:py-36",
+  md: "py-20 sm:py-24",
+  lg: "py-28 sm:py-30",
 };
 
 /** Standard padded, max-width content container with vertical rhythm. */
@@ -35,7 +35,7 @@ export function SectionContainer({
   as: Tag = "section",
 }: SectionContainerProps) {
   return (
-    <Tag id={id} className={cn("relative px-6 lg:px-8", spacings[spacing])}>
+    <Tag id={id} className={cn("relative px-6", spacings[spacing])}>
       <div className={cn("mx-auto w-full", widths[width], className)}>
         {children}
       </div>

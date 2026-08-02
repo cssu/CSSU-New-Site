@@ -51,7 +51,7 @@ export function AsciiBackdrop({
     >
       <pre
         className={cn(
-          "absolute m-0 whitespace-pre font-mono leading-[1.05] tracking-tight text-tint",
+          "absolute m-0 whitespace-pre font-mono leading-[1.05] tracking-widest text-tint",
           "text-[clamp(0.32rem,1.2vw,0.8rem)]",
           intensities[intensity],
           positions[position],

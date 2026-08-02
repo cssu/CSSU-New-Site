@@ -22,13 +22,14 @@ export const sponsorSupporters: Partner[] = [
 export interface SponsoredEvent {
   title: string;
   partner: string;
+  image?: string;
 }
 
 /** Real events from the 2025–2026 sponsorship package. */
 export const sponsoredEvents: SponsoredEvent[] = [
-  { title: "Resume Review Panel", partner: "Dayforce" },
-  { title: "Technical Career Workshop", partner: "Google" },
-  { title: "Annual Recruitment Breakfast", partner: "CSSU" },
+  { title: "Resume Review Panel", partner: "Dayforce", image: "/assets/resume_workshop.png" },
+  { title: "Technical Career Workshop", partner: "Google", image: "/assets/google_workshop.png" },
+  { title: "Annual Recruitment Breakfast", partner: "CSSU", image: "/assets/breakfast.png" },
 ];
 
 export const sponsorBenefits: SponsorBenefit[] = [

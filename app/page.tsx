@@ -64,6 +64,7 @@ export default function HomePage() {
 
       <HeroSection />
 
+      {/* Images */}
       <SectionContainer spacing="md" width="wide" className="-my-30"> 
         <div className="flex flex-row justify-center gap-5">
           <Reveal className="rotate-355">
@@ -79,11 +80,10 @@ export default function HomePage() {
             <Image src="/assets/pizzas.png" alt="photo" width={210} height={210} />
           </Reveal>
         </div>
-        
       </SectionContainer>
 
       {/* Student resources & guides */}
-      <SectionContainer spacing="md" width="wide">
+      <SectionContainer spacing="md" width="wide" className="mt-14">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeader
             label="Quick Start"
@@ -124,7 +124,7 @@ export default function HomePage() {
       </SectionContainer>
 
       {/* Events */}
-      <SectionContainer spacing="md" width="wide">
+      <SectionContainer spacing="md" width="wide" className="-mt-18">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeader
             label="Events"
@@ -154,18 +154,16 @@ export default function HomePage() {
           title="Backed by the people who power CS at UofT"
           description="We're proudly supported by our funding partners — and we'd love to add your organization to the list."
         />
-        <Reveal className="mt-12">
-          <Marquee>
-            {sponsorSupporters.map((supporter) => (
-              <div
-                key={supporter.name}
-                className="flex min-w-[160px] items-center justify-center rounded-2xl border border-border bg-tint/[0.02] px-6 py-5"
-              >
-                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
-              </div>
-            ))}
-          </Marquee>
-        </Reveal>
+       <Marquee className="mt-10">
+          {sponsorSupporters.map((supporter) => (
+            <div
+              key={supporter.name}
+              className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
+            >
+              <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
+            </div>
+          ))}
+        </Marquee>
         <Reveal className="mt-10" delay={0.1}>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {sponsorTiers.map((tier) => (
