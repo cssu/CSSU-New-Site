@@ -71,10 +71,11 @@
     forwards;
   --animate-accordion-down: accordion-down 0.3s var(--ease-out-expo);
   --animate-accordion-up: accordion-up 0.3s var(--ease-out-expo);
+  --animate-card-swap: card-swap 0.4s ease-in-out forwards;
 
   @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-200%); }
+    100% { transform: translateX(-50%); }
   }
   @keyframes shimmer {
     0%,
@@ -119,6 +120,18 @@
     }
     to {
       height: 0;
+    }
+  }
+
+  @keyframes card-swap {
+    50% {
+      transform: translate(25%, 0%) scale(0.85) rotate(-5deg);
+      animation-timing-function: ease-in;
+    }
+
+    100% {
+      transform: translate(-90%, 0%) scale(0.85);
+      z-index: -1;
     }
   }
 } 
@@ -220,6 +233,16 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.001ms !important;
       scroll-behavior: auto !important;
+    }
+
+    /* Marquee is exempt: always animates, even with reduced motion enabled. */
+    .animate-marquee {
+      animation-duration: 38s !important;
+      animation-iteration-count: infinite !important;
+    }
+    .animate-card-swap {
+      animation-duration: 0.6s !important;
+      animation-iteration-count: 1 !important;
     }
   }
 }

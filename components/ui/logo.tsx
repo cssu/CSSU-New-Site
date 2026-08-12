@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { DivideCircle } from "lucide-react";
 
 interface LogoProps {
   className?: string;

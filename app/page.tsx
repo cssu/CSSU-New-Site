@@ -8,21 +8,21 @@ import { CTASection } from "@/components/sections/cta-section";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Marquee } from "@/components/ui/marquee";
-import { FeatureCard } from "@/components/cards/feature-card";
 import { GuideCard } from "@/components/cards/guide-card";
+import CardStack from "@/components/cards/card-stack";
 import { EventCard } from "@/components/cards/event-card";
 import { NewsCard } from "@/components/cards/news-card";
 import { ExecutiveCard } from "@/components/cards/executive-card";
 import { AsciiBackdrop } from "@/components/sections/ascii-backdrop";
-import { objectives, missionStatement } from "@/data/about";
+import { missionStatement } from "@/data/about";
 import { guides, newsItems } from "@/data/guides";
 import { events } from "@/data/events";
 import { executives } from "@/data/team";
 import { sponsorTiers, sponsorSupporters } from "@/data/sponsors";
 import { siteConfig } from "@/data/site";
-import type { AccentColor } from "@/types";
+// import type { AccentColor } from "@/types";
 
-const objectiveAccents: AccentColor[] = ["accent", "blue", "gold", "bronze"];
+// const objectiveAccents: AccentColor[] = ["accent", "blue", "gold", "bronze"];
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -51,6 +51,24 @@ const organizationSchema = {
   ],
 };
 
+const cards = [
+  {
+    photo: "/assets/event_dayforce.png",
+    heading: "Card 1",
+    description: "This is the description for Card 1.",
+  },
+  {
+    photo: "/assets/pancakes.png",
+    heading: "Card 2",        
+    description: "This is the description for Card 2.",
+  },
+  {
+    photo: "/assets/speaker.png",
+    heading: "Card 3",
+    description: "This is the description for Card 3.",
+  },
+]
+
 export default function HomePage() {
   const upcomingEvents = events.filter((e) => e.status === "upcoming").slice(0, 3);
   const featuredExecs = executives.slice(0, 4);
@@ -67,7 +85,7 @@ export default function HomePage() {
       {/* Images */}
       <SectionContainer spacing="md" width="wide" className="-my-30"> 
         <div className="flex flex-row justify-center gap-5">
-          <Reveal className="rotate-355">
+          <Reveal className="rotate-355"> 
             <Image src="/assets/photo.png" alt="photo" width={200} height={200} />
           </Reveal>
           <Reveal className="mt-18 rotate-6">
@@ -78,7 +96,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal className="-mt-30">
             <Image src="/assets/pizzas.png" alt="photo" width={210} height={210} />
-          </Reveal>
+          </Reveal> 
         </div>
       </SectionContainer>
 
@@ -106,20 +124,14 @@ export default function HomePage() {
       </SectionContainer>
 
       {/* About */}
-      <SectionContainer id="about" spacing="lg" width="wide">
+      <SectionContainer id="about" spacing="lg" width="wide" className="lg:pl-[22vh]">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           <SectionHeader
             label="Who we are"
             title="A student-governed home for computer science at UofT"
             description={missionStatement}
           />
-          <Stagger className="grid gap-5 sm:grid-cols-2">
-            {objectives.map((item, i) => (
-              <StaggerItem key={item.title} className="h-full">
-                <FeatureCard item={item} accent={objectiveAccents[i]} />
-              </StaggerItem>
-            ))}
-          </Stagger>
+          <CardStack children={cards} className="lg:pl-[50vh] lg:-mt-2 sm:pl-[70vh] sm:mt-10" />
         </div>
       </SectionContainer>
 
@@ -154,17 +166,27 @@ export default function HomePage() {
           title="Backed by the people who power CS at UofT"
           description="We're proudly supported by our funding partners — and we'd love to add your organization to the list."
         />
-       <Marquee className="mt-10">
+       <Marquee>
           {sponsorSupporters.map((supporter) => (
             <div
               key={supporter.name}
               className="flex min-w-[160px] items-center justify-center opacity-60 px-6 py-5"
             >
-              <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
+              {supporter.name == "Google" || supporter.name == "Intel" || supporter.name == "Soti" || supporter.name == "Soti" ? (
+                <Image src={supporter.src} alt={supporter.name} width={120} height={45} className="h-10 w-auto mt-2 object-contain" />
+              ) : 
+              supporter.name == "Huawei" ? (
+                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-28 -px-2 w-auto object-contain" />
+              ) : 
+              supporter.name == "Vector Institute" ? (
+                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-10 w-auto -mt-1 object-contain" />
+              ) : (
+                <Image src={supporter.src} alt={supporter.name} width={120} height={40} className="h-8 w-auto object-contain" />
+              )}
             </div>
           ))}
-        </Marquee>
-        <Reveal className="mt-10" delay={0.1}>
+       </Marquee>
+        <Reveal delay={0.1}>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {sponsorTiers.map((tier) => (
               <Link

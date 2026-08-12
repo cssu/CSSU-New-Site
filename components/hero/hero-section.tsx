@@ -1,8 +1,8 @@
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { Reveal } from "@/components/ui/motion";
 import { SectionLabel } from "@/components/sections/section-label";
 import { AsciiBackdrop } from "@/components/sections/ascii-backdrop";
 import { CTAButton } from "@/components/ui/cta-button";
-import { stats } from "@/data/about";
+// import { stats } from "@/data/about";
 import { siteConfig } from "@/data/site";
 
 export function HeroSection() {
