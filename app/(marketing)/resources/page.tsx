@@ -42,7 +42,7 @@ export default function ResourcesPage() {
         />
 
         <Reveal className="mt-10">
-          <GlassCard className="flex items-start gap-4 border-bronze/30 bg-bronze/[0.06] p-6">
+          <GlassCard className="flex items-center justify-start gap-4 border-bronze/30 bg-bronze/[0.06] p-6">
             <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-xl border border-bronze/30 bg-bronze/10 text-bronze">
               <LifeBuoy className="size-5" />
             </span>
