@@ -97,7 +97,7 @@ export default function CardStack({ children, className }: CardStackProps) {
             }}
           >
             <Image src={cardProps ? cardProps.photo : ""} alt={cardProps ? cardProps.heading : ""} fill className="object-cover" />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-transparent" />
             <div className="relative flex h-full flex-col gap-3 p-7">
               <span className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
                 with {cardProps?.heading}

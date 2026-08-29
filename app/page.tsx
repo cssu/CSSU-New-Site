@@ -53,19 +53,19 @@ const organizationSchema = {
 
 const cards = [
   {
-    photo: "/assets/event_dayforce.png",
-    heading: "Card 1",
-    description: "This is the description for Card 1.",
+    photo: "/assets/party!.png",
+    heading: "Social Activities",
+    description: "Organizing social events to help students make friends and build their network.",
   },
   {
-    photo: "/assets/pancakes.png",
-    heading: "Card 2",        
-    description: "This is the description for Card 2.",
+    photo: "/assets/recruiter.jpg",
+    heading: "Professional Development",        
+    description: "Offering professional skill development opportunities to prepare students for their careers.",
   },
   {
-    photo: "/assets/speaker.png",
-    heading: "Card 3",
-    description: "This is the description for Card 3.",
+    photo: "/assets/banner_kneel.jpg",
+    heading: "Academic Opportunities",
+    description: "Providing academic opportunities and support to help students excel in their studies.",
   },
 ]
 
