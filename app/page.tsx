@@ -131,7 +131,7 @@ export default function HomePage() {
             title="A student-governed home for computer science at UofT"
             description={missionStatement}
           />
-          <CardStack children={cards} className="lg:pl-[50vh] lg:-mt-2 sm:pl-[70vh] sm:mt-10" />
+          <CardStack cards={cards} className="lg:pl-[50vh] lg:-mt-2 sm:pl-[70vh] sm:mt-10" />
         </div>
       </SectionContainer>
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 // import specs for stack
 // assign index to each and use for cards
 interface CardStackProps {
-  children: CardProps[];
+  cards: CardProps[];
   className?: string;
 }
 
@@ -16,18 +16,17 @@ interface CardProps {
 }
 
 
-export default function CardStack({ children, className }: CardStackProps) {
-  // derive list of keys for children
-  const childKeys = useMemo(() => {
-    return children.map((_, index) => index).reverse();
-  }, [children]);
+export default function CardStack({ cards, className }: CardStackProps) {
+  // derive the initial stacking order from the cards
+  const initialOrder = useMemo(() => {
+    return cards.map((_, index) => index).reverse();
+  }, [cards]);
 
 
-  const [cards, setCards] = useState(childKeys);
+  const [order, setOrder] = useState(initialOrder);
   const [animating, setAnimating] = useState(false);
 
-  const displayCards = useMemo(() => [...cards], [cards]);
-  console.log("displayCards", displayCards);
+  const displayCards = useMemo(() => [...order], [order]);
 
   function handleClick(card: number) {
     if (animating) return;
@@ -38,7 +37,7 @@ export default function CardStack({ children, className }: CardStackProps) {
     setAnimating(true);
 
     setTimeout(() => {
-      setCards((prev) => {
+      setOrder((prev) => {
         const copy = [...prev];
         const top = copy.pop()!;
         copy.unshift(top);
@@ -52,7 +51,7 @@ export default function CardStack({ children, className }: CardStackProps) {
   return (
     <div className={`relative h-[500px] w-[500px] ${className || ""}`}>
       {displayCards.map((card, index) => {
-        const cardProps = children[card];
+        const cardProps = cards[card];
         const total = displayCards.length;
         const nthLast = total - index;
 
