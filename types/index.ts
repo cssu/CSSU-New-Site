@@ -25,6 +25,7 @@ export interface Executive {
   role: string;
   bio: string;
   initials: string;
+  photo?: string;
   accent: AccentColor;
   links?: {
     email?: string;
