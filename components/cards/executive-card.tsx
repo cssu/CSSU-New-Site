@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, Linkedin, Github } from "lucide-react";
 import { GlassCard } from "@/components/cards/glass-card";
 import { getAccent } from "@/lib/accent";
@@ -12,13 +13,22 @@ export function ExecutiveCard({ exec }: { exec: Executive }) {
       <div className="flex items-center gap-4">
         <div
           className={cn(
-            "grid size-16 shrink-0 place-items-center rounded-2xl border text-lg font-semibold transition-transform duration-500 group-hover:scale-105",
-            accent.bg,
+            "relative size-16 shrink-0 overflow-hidden rounded-full border transition-transform duration-500 group-hover:scale-105",
             accent.border,
-            accent.text,
+            !exec.photo && ["grid place-items-center text-lg font-semibold", accent.bg, accent.text],
           )}
         >
-          {exec.initials}
+          {exec.photo ? (
+            <Image
+              src={exec.photo}
+              alt={`${exec.name} profile picture`}
+              fill
+              sizes="64px"
+              className="object-cover"
+            />
+          ) : (
+            exec.initials
+          )}
         </div>
         <div className="min-w-0">
           <h3 className="truncate text-lg font-semibold text-foreground">
