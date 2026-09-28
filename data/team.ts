@@ -35,7 +35,7 @@ export const executives: Executive[] = [
     role: "VP Academic",
     bio: "Curates academic resources and advocates for students' interests in curriculum and departmental decisions.",
     initials: "JS",
-    photo: "/assets/pfp/jordan.jpg",
+    photo: "/assets/pfp/jordan.webp",
     accent: "blue",
     links: { email: "cssu@cdf.toronto.edu" },
   },
